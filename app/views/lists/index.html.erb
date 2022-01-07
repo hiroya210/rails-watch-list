@@ -1,11 +1,12 @@
 <div class="index-header">
     <h3>My List</h3>
+    <%= link_to "Create New List", new_list_path, class: "btn btn-danger" %>
 </div>
 <div class="cards">
   <% @lists.each do |list| %>
   <%= link_to list_path(list) do %>
     <div id="index-card" class="card bg-dark text-white" style="max-width: 16rem;">
-      <img src="https://loremflickr.com/320/240" class="card-img" alt="...">
+      <%= image_tag "https://loremflickr.com/320/240/#{["movies", "theatre", "superhero"].sample}", class: "card-img"  %>
         <div class="card-img-overlay d-flex justify-content-center align-items-center">
           <h5 class="card-title"><%= list.name %></h5>
         </div>
