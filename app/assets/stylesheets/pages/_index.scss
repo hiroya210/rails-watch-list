@@ -21,8 +21,18 @@
 }
 
 .cards{
+    margin-top: 16px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+}
+
+.index-header{
+    padding-top: 24px;
+
+    h3{
+        font-size: 32px;
+        color: white;
+    }
 }
 
