@@ -1,0 +1,28 @@
+// Import page-specific CSS files here.
+@import "home";
+
+#index-card{
+    margin: 16px;
+    transition: 0.3s;
+}
+
+#index-card:hover{
+    transform: translateY(-5%);
+}
+
+.card-img-overlay{
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+    background-size: cover;
+
+    h5{
+        text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.514);
+        font-weight: bold;
+    }
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+

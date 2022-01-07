@@ -1,0 +1,14 @@
+<h1 style="color: white;">My list</h1>
+<%= link_to "Add List", new_list_path %>
+<div class="cards">
+  <% @lists.each do |list| %>
+  <%= link_to list_path(list) do %>
+    <div id="index-card" class="card bg-dark text-white" style="max-width: 16rem;">
+      <img src="https://loremflickr.com/320/240" class="card-img" alt="...">
+        <div class="card-img-overlay d-flex justify-content-center align-items-center">
+          <h5 class="card-title"><%= list.name %></h5>
+        </div>
+    </div>
+  <% end %>
+  <% end %>
+</div>
