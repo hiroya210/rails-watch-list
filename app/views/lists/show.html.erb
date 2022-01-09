@@ -7,13 +7,21 @@
     <% end %>
   </h3>
   <div>
-    <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
+    <% if @list.movies.empty? %>
+      <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
+    <% else %>
+      <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>
-
-<div class="d-flex justify-content-start mt-3">
+<% if @list.movies.empty? %>
+  <div class="d-flex justify-content-center align-items-end" style="color: white; opacity: 0.7; height: 150px;">
+  <h4><em>No Bookmarks yet（；´д｀）ゞ</em></h4>
+</div>
+<div class="d-flex justify-content-center mt-3">
   <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
 </div>
+<% end %>
 
 <div class="show-cards">
   <% @list.movies.each do |movie| %>
