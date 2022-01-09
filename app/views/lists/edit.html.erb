@@ -1,4 +1,4 @@
-<%= simple_form_for(@list) do |f| %>
-    <%= f.input :name %>
-    <%= f.submit %>
-<% end %>
+<div class="form-header">
+    <h3>Edit List</h3>
+    <%= render "form", list: @list, path: list_path(@list) %>
+</div>

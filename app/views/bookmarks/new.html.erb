@@ -1,9 +1,11 @@
-
 <div class="form-header">
     <h3>Add Movie</h3>
     <%= simple_form_for [@list, @bookmark] do |f| %>
       <%= f.association :movie %>
       <%= f.input :comment %>
-      <%= f.submit "Add movie",  class: "btn btn-primary" %>
+      <div class="d-flex justify-content-between">
+        <%= f.submit "Add movie",  class: "btn btn-primary" %>
+        <%= link_to "Cancel", list_path(@list), class: "btn btn-secondary" %>
+      </div>
     <% end %>
 </div>

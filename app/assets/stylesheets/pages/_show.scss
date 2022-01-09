@@ -1,5 +1,22 @@
 .show-cards{
     color:white;
     display: flex;
-    gap: 16px;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 32px 0;
+
+    .card:hover{
+        border-color: white;
+        transition: 0.2s;
+    }
+}
+
+.hide-cards{
+    color: white;
+    transform: translateX(50%);
+}
+
+.card-body{
+    height: 100%;
 }

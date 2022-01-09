@@ -1,7 +1,4 @@
 <div class="form-header">
     <h3>Create List</h3>
-    <%= simple_form_for(@list) do |f| %>
-      <%= f.input :name %>
-      <%= f.submit "Create List",  class: "btn btn-primary" %>
-    <% end %>
+    <%= render "form", list: @list, path: lists_path %>
 </div>

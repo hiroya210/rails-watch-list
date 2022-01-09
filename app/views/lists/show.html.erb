@@ -1,29 +1,48 @@
 <div class="index-header">
- <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-info" %>
-    <h3><%= @list.name %></h3>
-    <%= link_to "Delete List", list_path(@list), class: "btn btn-warning", method: :delete, data: { confirm: "Are you sure?" } %>
+  <h3>
+    <%= @list.name %>
+    <%= render "components/modal", path: list_path(@list) %>
+    <%= link_to edit_list_path(@list) do %>
+      <i class="far fa-edit fa-xs" style="font-size: 1rem;"></i>
+    <% end %>
+  </h3>
+  <div>
+    <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
+  </div>
+</div>
+
+<div class="d-flex justify-content-start mt-3">
+  <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
 </div>
 
 <div class="show-cards">
   <% @list.movies.each do |movie| %>
-    <div class="card text-white bg-dark mb-3" style="width: 18rem; max-height: 42rem;">
-      <%= image_tag movie.poster_url, size:"320", class:"card-img-top" %>
-    <div>
-</div>
+  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+    <div class="card mb-3 bg-dark d-flex" style="max-width: 589px;">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <%= image_tag movie.poster_url, class:"img-fluid" %>
+        </div>
+          <div class="col-md-8">
+            <div class="card-body py-0 pt-3 d-flex flex-column justify-content-between">
+              <div>
+                <h5 class="card-title"><%= movie.title %></h5>
+                <% movie.rating.times do %> 
+                 <i class="fas fa-star" style="color: #F5C518;"></i>
+                <% end %>
+                <p class="card-text mt-2"><%= movie.shorten_overview %>...Read more</p>
+              </div>
+                <div class="d-flex justify-content-between">
+                  <p class="card-text"><small>
+                    <i class="fas fa-quote-left"></i>
+                    <em style="opacity: 0.8;"><%= bookmark.comment %></em>
+                  </small><p>
+                  <%= render "components/movieModalButton", movie: movie.id, path: bookmark_path(bookmark.id) %>
+                </div>
 
-  <div class="card-body" >
-    <p><i class="fas fa-star" style="color: yellow;" ></i> <%= movie.rating %></p>
-    <h5 class="card-title"><%= movie.title %></h5>
-    <p class="card-text">
-      <% if movie.overview.length >= 80 %>
-        <%= movie.overview.first(80) %>... <%= link_to "See more", "#" %>
-      <% else %>
-        <%= movie.overview %>
-      <% end %>
-      <%= link_to "Delete from list", bookmark_path(movie.bookmark_ids), method: :delete, data: { confirm: "Are you sure?" } %>
-      </p>
-  </div>
-</div>
+           </div>
+          </div>
+      </div>
+    </div>
   <% end %>
 </div>
-
