@@ -12,6 +12,11 @@
   </head>
 
   <body>
+<% flash.each do |type, msg| %>
+  <div class="alert alert-success">
+    <%= msg %>
+  </div>
+<% end %>
   <% unless current_page?(root_path) %>
     <%= render "components/navbar"%>
   <% end %>

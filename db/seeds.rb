@@ -1,23 +1,7 @@
-# Movie.create(
-#     title: "Wonder Woman 1984", 
-#     overview: "Wonder Woman comes into conflict with the Soviet Union during the Cold War in the 1980s", 
-#     poster_url: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", rating: 6.9)
-# Movie.create(
-#     title: "The Shawshank Redemption", 
-#     overview: "Framed in the 1940s for double murder, upstanding banker Andy Dufresne begins a new life at the Shawshank prison", 
-#     poster_url: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", rating: 8.7)
-# Movie.create(
-#     title: "Titanic", 
-#     overview: "101-year-old Rose DeWitt Bukater tells the story of her life aboard the Titanic.", 
-#     poster_url: "https://image.tmdb.org/t/p/original/9xjZS2rlVxm8SFx8kPC3aIGCOYQ.jpg", rating: 7.9)
-# Movie.create(
-#     title: "Ocean's Eight", 
-#     overview: "Debbie Ocean, a criminal mastermind, gathers a crew of female thieves to pull off the heist of the century.", 
-#     poster_url: "https://image.tmdb.org/t/p/original/MvYpKlpFukTivnlBhizGbkAe3v.jpg", rating: 7.0)
-
 require "json"
 require "open-uri"
 
+List.destroy_all
 
 url = "http://tmdb.lewagon.com/movie/top_rated"
 movies = JSON.parse(URI.open(url).read)
@@ -31,24 +15,35 @@ movies["results"].each do |result|
   )
 end
 
+puts "Creating Seeds"
+file1 = URI.open('https://res.cloudinary.com/yahiro/image/upload/v1641892089/rails%20watchlist/toprated.jpg')
+seed1 = List.new( name: "Top Rated")
+seed1.photo.attach(io: file1, filename: 'toprated.jpg', content_type: 'image/jpg')
+seed1.save
+puts "Seed 1 done!"
 
-List.create(
-  name: "Top Rated",
-  image: "toprated.jpg"
-)
-List.create(
-  name: "SuperHeroes",
-  image: "superhero.png"
-)
-List.create(
-  name: "Drama",
-  image: "drama.jpg"
-)
-List.create(
-  name: "Classic",
-  image: "classic.jpg"
-)
-List.create(
-  name: "Asian",
-  image: "asian.jpeg"
-)
+file2 = URI.open("https://res.cloudinary.com/yahiro/image/upload/v1641892089/rails%20watchlist/superhero.png")
+seed2 = List.new( name: "SuperHeroes")
+seed2.photo.attach(io: file2, filename: 'superhero.png', content_type: 'image/png')
+seed2.save
+puts "Seed 2 done!"
+
+file3 = URI.open("https://res.cloudinary.com/yahiro/image/upload/v1641892089/rails%20watchlist/drama.jpg")
+seed3 = List.new( name: "Drama")
+seed3.photo.attach(io: file3, filename: 'drama.jpg', content_type: 'image/jpg')
+seed3.save
+puts "Seed 3 done!"
+
+
+file4 = URI.open("https://res.cloudinary.com/yahiro/image/upload/v1641892089/rails%20watchlist/classic.jpg")
+seed4 = List.new( name: "classic")
+seed4.photo.attach(io: file4, filename: 'classic.jpg', content_type: 'image/jpg')
+seed4.save
+puts "Seed 4 done!"
+
+
+file5 = URI.open("https://res.cloudinary.com/yahiro/image/upload/v1641892088/rails%20watchlist/asian.jpg")
+seed5 = List.new( name: "asian")
+seed5.photo.attach(io: file5, filename: 'asian.jpg', content_type: 'image/jpg')
+seed5.save
+puts "Seed 5 done!"

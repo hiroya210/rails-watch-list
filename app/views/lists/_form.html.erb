@@ -1,6 +1,6 @@
 <%= simple_form_for(list) do |f| %>
 <%= f.input :name %>
-<%= f.input :image %>
+<%= f.input :photo, as: :file %>
 <div class="d-flex justify-content-between">
   <%= f.button :submit,  class: "btn btn-primary" %>
   <%= link_to "Cancel", path, class: "btn btn-secondary" %>

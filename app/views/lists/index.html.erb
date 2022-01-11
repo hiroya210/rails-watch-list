@@ -7,9 +7,9 @@
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
       <div id="index-card" class="card bg-dark text-white" style="width: 320px; height:240px">
-        <%= image_tag  (list.image.nil? ? "https://loremflickr.com/320/240" : list.image ),  class: "card-img-fluid"  %>
+        <%= cl_image_tag list.photo.key, class: "card-img-fluid" %>
         <div class="card-img-overlay d-flex justify-content-center align-items-center">
-          <h5 class="card-title"><%= list.name %></h5>
+          <h5 class="card-title"><%= list.name.capitalize %></h5>
         </div>
       </div>
     <% end %>
