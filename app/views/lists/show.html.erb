@@ -60,7 +60,15 @@
     <% if @list.reviews.any? %>
       <% @list.reviews.each do |review| %>
         <div class="d-flex flex-column py-3 ms-0" style="border-bottom: 2px solid rgb(48,48,48);">
-          <p><%= "⭐" * review.rating %></p>
+          <p>
+            <% review.rating.times do %>
+              <i class="fas fa-star"></i>
+            <% end %>
+            <% (5 - review.rating).times do %>
+              <i class="far fa-star"></i>
+            <% end %>
+            <small style="opacity: 0.7;"><em><%= review.time_of_review %></em></small>
+          </p>
           <p><%= review.content %></p>
         </div>
       <% end %>
@@ -70,6 +78,10 @@
   </div>
   <div class="col-lg-5 col-sm-12 p-3" style="height:30%; background-color: rgb(48,48,48);">
     <h4>Add your Review</h4>
-    <%= render "reviewForm", list: @list, review: @review %>
+    <%= simple_form_for [@list, @review] do |f| %>
+      <%= f.input :content %>
+      <%= f.input :rating, :collection => [1,2,3,4,5] %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
   </div>
 </div>

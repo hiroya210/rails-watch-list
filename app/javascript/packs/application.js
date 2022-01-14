@@ -30,6 +30,5 @@ $(document).on('turbolinks:load', () => {
   $("#review_rating").barrating({
     theme: "css-stars"
   });
-  loadDynamicBannerText();
-  console.log("Hello World!")    
+  loadDynamicBannerText();  
 });

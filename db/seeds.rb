@@ -1,6 +1,7 @@
 require "json"
 require "open-uri"
 
+Review.destroy_all
 List.destroy_all
 
 url = "http://tmdb.lewagon.com/movie/top_rated"

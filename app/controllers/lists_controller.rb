@@ -16,7 +16,7 @@ class ListsController < ApplicationController
     def create
       @list = List.new(list_params)
        if @list.save
-        flash[:alert] = "\"#{@list.name}\" list has been created"
+        flash[:alert] = "\"#{@list.name}\" list successfully created"
         redirect_to list_path(@list)
        else
         render :new
@@ -38,6 +38,7 @@ class ListsController < ApplicationController
     end
 
     def destroy
+      flash[:danger] = "\"#{@list.name}\" list has been deleted"
       @list.destroy
       
       redirect_to lists_path
