@@ -25,6 +25,7 @@ class ListsController < ApplicationController
 
 
     def show
+      @review = Review.new
     end
 
     def edit

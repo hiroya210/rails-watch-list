@@ -1,18 +1,16 @@
 <div class="index-header">
-  <h3>
-    <%= @list.name %>
-    <%= render "components/modal", path: list_path(@list) %>
-    <%= link_to edit_list_path(@list) do %>
-      <i class="far fa-edit fa-xs" style="font-size: 1rem;"></i>
-    <% end %>
-  </h3>
-  <div>
+    <h3>
+      <%= @list.name %>
+      <%= render "components/modal", path: list_path(@list) %>
+      <%= link_to edit_list_path(@list) do %>
+        <i class="far fa-edit fa-xs" style="font-size: 1rem;"></i>
+      <% end %>
+    </h3>
     <% if @list.movies.empty? %>
       <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
     <% else %>
       <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
     <% end %>
-  </div>
 </div>
 <% if @list.movies.empty? %>
   <div class="d-flex justify-content-center align-items-end" style="color: white; opacity: 0.7; height: 150px;">
@@ -53,4 +51,25 @@
       </div>
     </div>
   <% end %>
+</div>
+
+
+<div class="row mx-sm-2 pt-5 d-flex justify-content-between" style="color: white; border-top: 2px solid rgb(48,48,48);">
+  <div class="col-lg-6 col-sm-12 px-sm-2 m-3">
+    <h2>Reviews</h2>
+    <% if @list.reviews.any? %>
+      <% @list.reviews.each do |review| %>
+        <div class="d-flex flex-column py-3 ms-0" style="border-bottom: 2px solid rgb(48,48,48);">
+          <p><%= "⭐" * review.rating %></p>
+          <p><%= review.content %></p>
+        </div>
+      <% end %>
+    <% else %>
+      <p style="color: white; opacity: 0.7; height: 150px;"><em>No Reviews yet (っ °Д °;)っ</em></p>
+    <% end %>
+  </div>
+  <div class="col-lg-5 col-sm-12 p-3" style="height:30%; background-color: rgb(48,48,48);">
+    <h4>Add your Review</h4>
+    <%= render "reviewForm", list: @list, review: @review %>
+  </div>
 </div>
