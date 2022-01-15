@@ -36,6 +36,8 @@ textarea.form-control{
 }
 
 #footer{
+  margin: 0;
+  padding: 0;
   border-top: 3px solid rgb(48,48,48);
   margin-top: 64px;
   color: white;
@@ -84,16 +86,31 @@ textarea.form-control{
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
     .main-container {
+      width: 90vw;
+    }
+
+    #footer{
       width: 100vw;
     }
-    .index-header h3{
-      font-size: 1.5rem;
+
+    .index-header {
+      padding-left: 8px;
+      
+      h3{
+      font-size: 1.2rem;
+      }
     }
+    
     .form-header{
-      width: 360px;
+      width: 320px;
+      margin: 0 auto;
     }
 
     #inner-footer p{
       font-size: 0.7em;
+    }
+
+    h2{
+      font-size: 1.2rem;
     }
   }

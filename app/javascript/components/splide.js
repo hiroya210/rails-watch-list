@@ -24,6 +24,12 @@ export const slides = () => {
         rewind    : true,
         pagination: false,
         arrows    : false,
+        breakpoints : {
+          600: {
+            fixedWidth : "100vw",
+            fixedHeight: "200",
+          },
+        },
   }).mount();
 
 main.sync( thumbnails );
