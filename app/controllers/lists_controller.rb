@@ -7,6 +7,8 @@ class ListsController < ApplicationController
 
     def index
       @lists = List.all
+      images = Unsplash::Photo.search("movies", 1, 10)
+      @images = images.sample.urls.regular
     end
 
     def new

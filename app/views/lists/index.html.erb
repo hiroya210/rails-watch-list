@@ -10,7 +10,7 @@
         <% unless list.photo.key.nil?  %>
           <%= cl_image_tag list.photo.key, class: "card-img-fluid" %>
         <% else %>
-          <%= image_tag "https://loremflickr.com/320/240/movies,theatre", class: "card-img-fluid" %>
+          <%= image_tag @images, class: "card-img-fluid" %>
         <% end %>
         <div class="card-img-overlay d-flex justify-content-center align-items-center">
           <h5 class="card-title"><%= list.name.capitalize %></h5>
