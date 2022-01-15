@@ -3,7 +3,6 @@
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
 
-
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
@@ -11,16 +10,22 @@ import "channels";
 import 'bootstrap';
 import { loadDynamicBannerText } from "../components/type.js"
 import { barrating } from "../components/barrating"
+import { slides } from "../components/splide"
 import "select2";
-
 
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
+document.addEventListener('turbolinks:load', () => {
+  loadDynamicBannerText();
+});
 
 document.addEventListener('turbolinks:load', () => {
-  $('#bookmark_movie_id').select2()
+  $('#bookmark_movie_id').select2();
+  slides();
+});
+
+document.addEventListener('turbolinks:load', () => {
   barrating();
-  loadDynamicBannerText();  
 });

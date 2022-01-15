@@ -1,4 +1,35 @@
+
+<% if @list.movies.empty? %>
+  <div class="d-flex justify-content-center align-items-end" style="color: white; opacity: 0.7; height: 150px;">
+  <h4><em>No Bookmarks yet（；´д｀）ゞ</em></h4>
+</div>
+<div class="d-flex justify-content-center my-3">
+  <%= link_to "Add Movies", new_list_bookmark_path(@list), class: " mb-5 btn btn-primary" %>
+</div>
+<% else %>
+
+<div id="main-slider">
+  <div class="splide__track" style="color:white;">
+      <div class="splide__list">
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="splide__slide">
+              <%= render "components/card", 
+                title: bookmark.movie.title, 
+                rating: bookmark.movie.rating, 
+                overview: bookmark.movie.overview, 
+                photo: bookmark.movie.poster_url, 
+                comment: bookmark.comment
+              %>
+          </div>
+          <%= render "components/movieModalButton", path: bookmark_path(bookmark) %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="index-header">
+  <div class="px-5">
     <h3>
       <%= @list.name %>
       <%= render "components/modal", path: list_path(@list) %>
@@ -6,55 +37,31 @@
         <i class="far fa-edit fa-xs" style="font-size: 1rem;"></i>
       <% end %>
     </h3>
+  </div>
+  <div class="px-3">
     <% if @list.movies.empty? %>
       <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
     <% else %>
       <%= link_to "Add Movie", new_list_bookmark_path(@list), class: "btn btn-primary" %>
     <% end %>
+  </div>
 </div>
-<% if @list.movies.empty? %>
-  <div class="d-flex justify-content-center align-items-end" style="color: white; opacity: 0.7; height: 150px;">
-  <h4><em>No Bookmarks yet（；´д｀）ゞ</em></h4>
-</div>
-<div class="d-flex justify-content-center mt-3">
-  <%= link_to "Add Movies", new_list_bookmark_path(@list), class: "btn btn-primary" %>
-</div>
-<% end %>
-
-<div class="show-cards">
-  <% @list.movies.each do |movie| %>
-  <% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
-    <div class="card mb-3 bg-dark d-flex" style="max-width: 589px;">
-      <div class="row g-0">
-        <div class="col-md-4">
-          <%= image_tag movie.poster_url, class:"img-fluid" %>
-        </div>
-          <div class="col-md-8">
-            <div class="card-body py-0 pt-3 d-flex flex-column justify-content-between">
-              <div>
-                <h5 class="card-title"><%= movie.title %></h5>
-                <% movie.rating.times do %> 
-                 <i class="fas fa-star" style="color: #F5C518;"></i>
-                <% end %>
-                <p class="card-text mt-2"><%= movie.shorten_overview %>...Read more</p>
-              </div>
-                <div class="d-flex justify-content-between">
-                  <p class="card-text"><small>
-                    <i class="fas fa-quote-left"></i>
-                    <em style="opacity: 0.8;"><%= bookmark.comment %></em>
-                  </small><p>
-                  <%= render "components/movieModalButton", movie: movie.id, path: bookmark_path(bookmark.id) %>
-                </div>
-
-           </div>
+<div class="splide">
+    <div class="splide__track">
+      <div class="splide__list">
+        <% @list.bookmarks.each do |bookmark| %>
+          <div class="splide__slide">
+            <%= image_tag bookmark.movie.poster_url %>
           </div>
+        <% end %>
       </div>
     </div>
-  <% end %>
-</div>
+  </div>
+<% end %>
 
 
-<div class="row mx-sm-2 pt-5 d-flex justify-content-between" style="color: white; border-top: 2px solid rgb(48,48,48);">
+
+<div class="row mx-sm-2 px-lg-4 pt-5 d-flex justify-content-between" style="color: white; border-top: 2px solid rgb(48,48,48);">
   <div class="col-lg-6 col-sm-12 px-sm-2 m-3">
     <h2>Reviews</h2>
     <% if @list.reviews.any? %>
@@ -76,8 +83,8 @@
       <p style="color: white; opacity: 0.7; height: 150px;"><em>No Reviews yet (っ °Д °;)っ</em></p>
     <% end %>
   </div>
-  <div class="col-lg-5 col-sm-12 p-3" style="height:30%; background-color: rgb(48,48,48);">
-    <h4>Add your Review</h4>
+<div class="col-lg-5 col-sm-12 p-3 ml-3" style="height:30%; background-color: rgb(48,48,48);">
+  <h4>Add your Review</h4>
     <%= simple_form_for [@list, @review] do |f| %>
       <%= f.input :content %>
       <%= f.input :rating, :collection => [1,2,3,4,5] %>

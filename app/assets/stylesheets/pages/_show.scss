@@ -4,12 +4,28 @@
     gap: 20px;
     flex-wrap: wrap;
     justify-content: center;
+    flex-direction: row;
     margin: 32px 0;
+  }
+// .modal-backdrop {
+//     z-index: -1;
+//   }
+// #main-slider img{
+//     height: 70vh;
+//     width: 30vw;
 
-    .card:hover{
-        border-color: white;
-        transition: 0.2s;
-    }
+// }
+
+.modal-backdrop {
+    z-index: -1;
+  }
+
+.splide__slide {
+    opacity: 0.3;
+}
+  
+.splide__slide.is-active {
+    opacity: 1;
 }
 
 .hide-cards{

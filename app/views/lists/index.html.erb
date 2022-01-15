@@ -1,4 +1,4 @@
-<div class="index-header">
+<div class="index-header pt-4 px-4">
   <h3>My List</h3>
   <%= link_to "Create New List", new_list_path, class: "btn btn-danger" %>
 </div>
@@ -6,7 +6,7 @@
 <div class="cards">
   <% @lists.each do |list| %>
     <%= link_to list_path(list) do %>
-      <div id="index-card" class="card bg-dark text-white" style="width: 320px; height:240px">
+      <div id="index-card" class="card bg-dark text-white m-2" style="width: 320px; height:240px">
         <% unless list.photo.key.nil?  %>
           <%= cl_image_tag list.photo.key, class: "card-img-fluid" %>
         <% else %>
