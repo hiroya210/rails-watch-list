@@ -56,10 +56,12 @@
             <%= image_tag bookmark.movie.poster_url %>
           </div>
         <% end %>
-          <div class="splide__slide">
-          <%= link_to new_list_bookmark_path(@list), style:"text-decoration: none" do %>
-            <%= render "components/addCard" %>
-          <% end %>
+          <div class="splide__slide new">
+            <div class="new-bookmark inactive" style="height:100%;">
+              <%= link_to new_list_bookmark_path(@list),style:"text-decoration: none" do %>
+                <%= render "components/addCard" %>
+              <% end %>
+            </div>
           </div>
       </div>
     </div>
