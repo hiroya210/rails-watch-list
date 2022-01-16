@@ -12,7 +12,7 @@ export const slides = () => {
         cover       : true,
         isNavigation: true,
         breakpoints : {
-          600: {
+          560: {
             fixedWidth : 100,
             fixedHeight: 100,
           },
@@ -25,8 +25,8 @@ export const slides = () => {
         pagination: false,
         arrows    : false,
         breakpoints : {
-          600: {
-            fixedWidth : "100vw",
+          560: {
+            fixedWidth : "90vw",
             fixedHeight: "200",
           },
         },
