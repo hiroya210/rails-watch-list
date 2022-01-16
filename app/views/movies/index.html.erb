@@ -1,4 +1,4 @@
-<div class="index-header">
+<div class="index-header pt-4 px-4">
   <h3>
     All Avalaible Movies
   </h3>
@@ -8,11 +8,11 @@
 </div>
 <div class="show-cards">
   <% @movies.each do |movie| %>
-    <div class="card bg-dark" style="width: 14rem;">
+    <div class="card" style="background: rgb(26,26,26); width: 14rem;">
       <%= image_tag movie.poster_url, class: "card-img-top" %>
         <div class="card-body d-flex justify-content-between align-items-center flex-column" style="text-align: center;">
           <h5 class="card-title"><%=movie.title%></h5>
-          <%= link_to "Add to Watch List", lists_path%>
+          <%= link_to "Add to Watch List", lists_path, style: "color: rgb(140,140,140); text-decoration: none;" %>
         </div>
     </div>
   <% end %>

@@ -1,8 +1,8 @@
-<%# <!-- Button trigger modal -->
-<a type="button" style="color: #FF385C;" data-toggle="modal" data-target="#movie">Remove</a> %>
+<!-- Button trigger modal -->
+<a type="button" style="color: #FF385C;" data-toggle="modal" data-target="#movie<%=movie%>">Remove from list</a>
 
 <!-- Modal -->
-<div class="modal fade" id="movie" tabindex="-1" role="dialog" aria-labelledby="movieLabel" aria-hidden="true">
+<div class="modal fade" id="movie<%=movie%>" tabindex="-1" role="dialog" aria-labelledby="movieLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header" style="color: black; font-size: 24px;">
@@ -11,8 +11,8 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="color: black; font-size: 16px;">
-       <p>Are you sure you want to delete this Movie?</p>
+      <div class="modal-body" style="text-align: center; color: black; font-size: 18px;">
+       <p>Hold up!🖐 are you sure you want to delete this Movie?</p>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>

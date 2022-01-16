@@ -12,6 +12,7 @@ movies["results"].each do |result|
     title: result["title"], 
     overview: result["overview"], 
     poster_url: "https://image.tmdb.org/t/p/original#{result["poster_path"]}", 
+    backdrop_url: "https://image.tmdb.org/t/p/original#{result["backdrop_path"]}",
     rating: result["vote_average"]
   )
 end
