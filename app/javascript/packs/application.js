@@ -17,6 +17,17 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
+
+// import swal from 'sweetalert';
+// const test = document.querySelector("#testing");
+// test.addEventListener("click", (e) => {
+//   swal({
+//     title: "Oh Wow you really clicked!",
+//     text: "you have been trolled ;)",
+//     icon: "warning",
+//   });
+// })
+
 document.addEventListener('turbolinks:load', () => {
   loadDynamicBannerText();
 });
