@@ -22,10 +22,6 @@
   margin-right: 0 !important;
 }
 
-#card-overlay{
-  background: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2));
-}
-
 body{
     margin: 0;
     padding: 0;
@@ -142,4 +138,8 @@ textarea.form-control{
       align-items: center !important;
       flex-direction: row !important;
     }
+
+    .card-img-overlay{
+      background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) !important;
   }
+}
