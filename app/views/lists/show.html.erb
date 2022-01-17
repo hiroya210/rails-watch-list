@@ -29,6 +29,7 @@
     </div>
   </div>
 </div>
+<% end %>
 
 <div class="index-header">
   <div class="px-lg-5">
@@ -41,12 +42,10 @@
     </h3>
   </div>
   <div class="px-3">
-    <% if @list.movies.empty? %>
-      <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
-   <% end %>
   </div>
 </div>
 
+<% unless @list.movies.empty? %>
 <%# Thumbnails %>
 <div class="splide">
     <div class="splide__track">
@@ -67,8 +66,6 @@
     </div>
   </div>
 <% end %>
-
-
 
 <div class="row px-lg-4 pt-5 d-flex justify-content-between" style="color: white; border-top: 2px solid rgb(48,48,48);">
   <div class="col-lg-6 col-sm-12 px-sm-2 m-3">
