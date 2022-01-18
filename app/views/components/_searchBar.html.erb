@@ -1,6 +1,8 @@
 <%= form_tag path, method: "GET" do %>
-<div class="d-flex">
-  <%= text_field_tag search, params[search], class:"form-control", placeholder: "Search movies" %>
-  <%= submit_tag "Search", class: "btn btn-secondary" %>
+<div class="d-flex justify-content-center">
+  <%= text_field_tag search, params[search], id:"search-form", class:"bg-dark form-control", placeholder: "Search Movies", value: "", style:"border:none; color:white;" %>
+  <%= button_tag :submit, id:"search-button" do %>
+    <i class="fas fa-search" style="color: rgb(52,58,64); padding-left: 8px;"></i>
+    <% end %>
 </div>
 <% end %>

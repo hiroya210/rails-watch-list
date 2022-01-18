@@ -1,15 +1,16 @@
-<div class="index-header d-flex flex-wrap  pt-4 px-4">
-  <h3>All Avalaible Movies <small>(<%= @movies.count %>)</small></h3>
+<div class="index-header d-flex flex-wrap  pt-4 px-lg-4">
+  <h3>Avalaible Movies <small>(<%= @movies.count %>)</small></h3>
   <%= render "components/searchBar", path: movies_path, search: :search_movie %>
 </div>
-<div class="show-cards">
+<div id="movie-cards" class="pt-5 movie-cards d-flex justify-content-between flex-wrap">
   <% @movies.each do |movie| %>
-    <div class="card" style="background: rgb(26,26,26); width: 14rem;">
-      <%= image_tag movie.poster_url, class: "card-img-top" %>
-        <div class="card-body d-flex justify-content-between align-items-center flex-column" style="text-align: center;">
-          <h5 class="card-title"><%=movie.title%></h5>
-          <%= link_to "Add to Watch List", lists_path, style: "color: rgb(140,140,140); text-decoration: none;" %>
-        </div>
+    <div id="card" style="width:auto; height:50vh; text-align:center; background: rgb(26,26,26); margin: 3px;">
+      <%= image_tag movie.poster_url, style:"width:15vw; height:50vh", id:"movie-img" %>
     </div>
   <% end %>
 </div>
+
+
+
+<%# "background: rgb(26,26,26); %>
+<%# color: rgb(140,140,140); %>

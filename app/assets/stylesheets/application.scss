@@ -101,5 +101,23 @@ body{
       flex-direction: row !important;
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) !important;
     }
+    
+    #search-form{
+      width: 90vw;
+      text-align: center;
+    }
+
+    #search-button{
+      display: none;
+    }
+    #movie-cards{
+      #card{
+        height: auto !important;
+      }
+      #movie-img{
+        height: auto !important;
+        width: 28vw !important;
+      }
+    }
 
 }

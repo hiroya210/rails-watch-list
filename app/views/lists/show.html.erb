@@ -34,7 +34,7 @@
 <div class="index-header">
   <div class="px-lg-5">
     <h3>
-      <%= @list.name %>
+      <%= @list.name.capitalize %>
       <%= render "components/modal", path: list_path(@list) %>
       <%= link_to edit_list_path(@list) do %>
         <i class="far fa-edit fa-xs" style="font-size: 1rem;"></i>
