@@ -43,7 +43,7 @@ list2.save
 puts 'list 2 done!'
 
 file3 = URI.open('https://res.cloudinary.com/yahiro/image/upload/v1641892089/rails%20watchlist/drama.jpg')
-list3 = List.new(name: 'My Recomendation')
+list3 = List.new(name: 'My Recommendation')
 list3.photo.attach(io: file3, filename: 'drama.jpg', content_type: 'image/jpg')
 list3.save
 puts 'list 3 done!'
@@ -60,11 +60,17 @@ list5.photo.attach(io: file5, filename: 'asian.jpg', content_type: 'image/jpg')
 list5.save
 puts 'list 5 done!'
 
+
+file6 = URI.open('https://res.cloudinary.com/yahiro/image/upload/v1642548653/development/random.jpg')
+list6 = List.new(name: 'All time Faves')
+list6.photo.attach(io: file6, filename: 'random.jpg', content_type: 'image/jpg')
+list6.save
+puts 'list 6 done!'
+
 # Bookmarks
 
 puts 'Creating bookmarks'
-movie_id = 1
-lists = [list1, list2, list3, list4, list5]
+lists = [list1, list2, list3, list4, list5, list6]
 
 lists.each do |list|
   10.times do
