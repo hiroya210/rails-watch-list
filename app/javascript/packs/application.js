@@ -24,7 +24,10 @@ document.addEventListener('turbolinks:load', () => {
 });
 
 document.addEventListener('turbolinks:load', () => {
-  $('#bookmark_movie_id').select2();
+  $('#bookmark_movie_id').select2({
+    placeholder: 'Select a movie',
+    tags: true
+  });
   slides();
 });
 

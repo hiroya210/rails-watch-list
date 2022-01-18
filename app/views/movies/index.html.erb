@@ -1,10 +1,6 @@
-<div class="index-header pt-4 px-4">
-  <h3>
-    All Avalaible Movies
-  </h3>
-  <div>
-    <%= link_to "Back", lists_path, class: "btn btn-secondary" %>
-  </div>
+<div class="index-header d-flex flex-wrap  pt-4 px-4">
+  <h3>All Avalaible Movies</h3>
+  <%= render "components/searchBar", path: movies_path, search: :search_movie %>
 </div>
 <div class="show-cards">
   <% @movies.each do |movie| %>

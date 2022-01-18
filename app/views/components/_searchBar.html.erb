@@ -1,0 +1,6 @@
+<%= form_tag path, method: "GET" do %>
+<div class="d-flex">
+  <%= text_field_tag search, params[search], class:"form-control", placeholder: "Search movies" %>
+  <%= submit_tag "Search", class: "btn btn-secondary" %>
+</div>
+<% end %>
