@@ -1,5 +1,6 @@
-class BookmarksController < ApplicationController
+# frozen_string_literal: true
 
+class BookmarksController < ApplicationController
   def new
     @bookmark = Bookmark.new
     @list = List.find(params[:list_id])
@@ -14,8 +15,8 @@ class BookmarksController < ApplicationController
       flash[:alert] = "Added \"#{movie.title}\""
       redirect_to list_path(@list)
     else
-      render "new"
-    end 
+      render 'new'
+    end
   end
 
   def destroy
@@ -32,5 +33,4 @@ class BookmarksController < ApplicationController
   def bookmark_params
     params.require(:bookmark).permit(:comment, :movie_id, :list_id)
   end
-
 end

@@ -92,7 +92,7 @@
 <div class="col-lg-5 col-sm-12 p-3 ml-3" style="height:30%; background-color: rgb(48,48,48);">
   <h4>Add your Review</h4>
     <%= simple_form_for [@list, @review] do |f| %>
-      <%= f.input :content %>
+      <%= f.input :content, placeholder: "Write your review..." %>
       <%= f.input :rating, :collection => [1,2,3,4,5] %>
       <%= f.button :submit, class: "btn btn-primary" %>
     <% end %>

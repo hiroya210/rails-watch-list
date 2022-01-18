@@ -1,12 +1,12 @@
-Rails.application.routes.draw do
+# frozen_string_literal: true
 
-  root to: "lists#home"
+Rails.application.routes.draw do
+  root to: 'lists#home'
   resources :lists do
-    resources :bookmarks, only: [:new, :create]
+    resources :bookmarks, only: %i[new create]
     resources :reviews, only: [:create]
   end
 
   resources :bookmarks, only: [:destroy]
-  resources :movies, only: [:show, :index]
-
+  resources :movies, only: %i[show index]
 end

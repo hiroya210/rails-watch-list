@@ -1,17 +1,16 @@
+# frozen_string_literal: true
+
 class MoviesController < ApplicationController
-    
-    def index
-        @movies = Movie.all
-      unless params[:search_movie] == ""
-        @movies = @movies.where("LOWER(title) like ?","%#{params[:search_movie].to_s.downcase}%")
-      else
-        @movies = Movie.all
-      end
-    end
+  def index
+    @movies = Movie.all
+    @movies = if params[:search_movie] == ''
+                Movie.all
+              else
+                @movies.where('LOWER(title) like ?', "%#{params[:search_movie].to_s.downcase}%")
+              end
+  end
 
-    def show
-      @movie = Movie.find(params[:id])
-      
-    end
-
+  def show
+    @movie = Movie.find(params[:id])
+  end
 end
