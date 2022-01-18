@@ -10,10 +10,12 @@ class BookmarksController < ApplicationController
     @bookmark = Bookmark.new(bookmark_params)
     @bookmark.list = @list
     movie = Movie.find(@bookmark.movie_id)
-    flash[:alert] = "Added \"#{movie.title}\""
-    @bookmark.save
-      
-    redirect_to list_path(@list)
+    if @bookmark.save
+      flash[:alert] = "Added \"#{movie.title}\""
+      redirect_to list_path(@list)
+    else
+      render "new"
+    end 
   end
 
   def destroy

@@ -1,0 +1,15 @@
+<div class="card mb-3 text-white m-auto pt-3" style="background: black; max-width: 1080px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <%= image_tag @movie.backdrop_url, class:"img-fluid rounded-start", style:"padding-top: 1.25rem" %>
+    </div>
+    <div class="col-md-8">
+      <div class="card-body movie-show">
+        <h3 class="card-title"><%= @movie.title %></h3>
+        <h4 class="card-text"><i class="fas fa-star"></i> <%= @movie.rating %></h4>
+        <h4 class="card-text"><%= @movie.overview %></h4>
+        <p class="card-text"><%= link_to "Add to list",  lists_path %></p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,10 +2,12 @@
   <h3>Avalaible Movies <small>(<%= @movies.count %>)</small></h3>
   <%= render "components/searchBar", path: movies_path, search: :search_movie %>
 </div>
-<div id="movie-cards" class="pt-5 movie-cards d-flex justify-content-between flex-wrap">
+<div id="movie-cards" class="pt-5 movie-cards d-flex justify-content-center flex-wrap">
   <% @movies.each do |movie| %>
+    <%= link_to movie_path(movie) do  %>
     <div id="card" style="width:auto; height:50vh; text-align:center; background: rgb(26,26,26); margin: 3px;">
       <%= image_tag movie.poster_url, style:"width:15vw; height:50vh", id:"movie-img" %>
+    <% end %>
     </div>
   <% end %>
 </div>
