@@ -12,8 +12,8 @@
         <% else %>
           <%= image_tag "https://loremflickr.com/g/320/240/movies", class: "card-img-fluid" %>
         <% end %>
-        <div class="card-img-overlay d-flex justify-content-center align-items-center">
-          <h5 class="card-title"><%= list.name.capitalize %></h5>
+        <div id ="index-card-name" class="card-img-overlay d-flex justify-content-center align-items-center">
+          <h5 class="card-title"><%= list.name.capitalize %>(<%= list.bookmarks.count %>)</h5>
         </div>
       </div>
     <% end %>

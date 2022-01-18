@@ -1,5 +1,5 @@
 <div class="index-header d-flex flex-wrap  pt-4 px-4">
-  <h3>All Avalaible Movies</h3>
+  <h3>All Avalaible Movies <small>(<%= @movies.count %>)</small></h3>
   <%= render "components/searchBar", path: movies_path, search: :search_movie %>
 </div>
 <div class="show-cards">

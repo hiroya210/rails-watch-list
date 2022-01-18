@@ -1,0 +1,32 @@
+.footer{
+    padding: 4rem 1rem 3rem 1rem;
+    margin: 0;
+    border-top: 3px solid rgb(48,48,48);
+    margin-top: 64px;
+    color: white;
+    background: linear-gradient(black, rgb(48,48,48));
+    opacity: 0.8;
+  
+    h3{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  
+    p{
+      font-weight: lighter;
+      opacity: 0.9;
+      font-size: 1rem;
+    }
+    ul{
+      padding-left: 0;
+      list-style: none;
+    }
+  }
+  
+  #inner-footer{
+    p{
+      font-weight: lighter;
+      opacity: 0.5;
+      margin: 0;
+      font-size: 1em;
+    }
+  }

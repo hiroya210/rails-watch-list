@@ -33,7 +33,7 @@ class ListsController < ApplicationController
 
     def update
       @list.update(list_params)
-
+      flash[:alert] = "\"#{@list.name}\" list successfully updated"
       redirect_to list_path(@list)
     end
 
