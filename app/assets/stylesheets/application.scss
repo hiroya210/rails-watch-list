@@ -34,23 +34,25 @@ body{
 }
 
 .main-container{
-    width: 1200px;
+    width: 95vw;
     margin: 0 auto;
     font-family: cursive;
 }
 
-@media (max-width: 960px) {
-    /* For a screen < 960px, this CSS will be read */
-    .main-container {
-      width: 720px;
-    }
+@media (min-width: 1200px) and (max-width: 1400px)  {
+  .splide__track{
+     width: 90vw;
+     margin: 0 auto;
   }
-  
+    
+}
+
   @media (max-width: 720px) {
     /* For a screen < 720px, this CSS will be read */
     .main-container {
       width: 560px;
     }
+
   }
   
   @media (max-width: 540px) {
