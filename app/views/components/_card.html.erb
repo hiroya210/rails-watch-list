@@ -3,11 +3,11 @@
     <%= image_tag (photo), size: "320x540", class:"card-img", id:"card-img-mobile", style:"object-fit: contain; object-position: 100%" %>
     <div class="card-img-overlay d-flex flex-column justify-content-center" id="card-overlay">
       <div class="pt-5">
-      <div style="width: 30%" id="card-img-mobile">
+      <div style="width: 45%" id="card-img-mobile">
         <h1 class="card-title" style="font-family:'Changa', sans-serif"><%=title%></h1>
         <p class="card-text"><i class="fas fa-star"></i> <%= rating %></p>
       </div>
-        <div style="width: 30%" id="card-img-mobile">
+        <div style="width: 45%" id="card-img-mobile">
           <p class="card-text"><%= overview %></p>
           <p class="card-text text-muted"><em><i class="fas fa-quote-left"></i> <%= comment %></em></p>
           <p><%= render  "components/movieModalButton", movie: movie, path: path %></p>
