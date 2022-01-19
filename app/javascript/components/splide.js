@@ -2,15 +2,8 @@ import Splide from '@splidejs/splide';
 
 
 
-export const slides = () => {
+export const slides = (maxWidth) => {
 
-  let maxHeight = window.innerHeight;
-  if ((maxHeight < 1230) && (maxHeight > 1400)){
-    let maxHeight = "100vh"
-  }
-  else{
-    let maxHeight = "60vh"
-  }
 
 
   const thumbnails = new Splide( '.splide', {
@@ -29,10 +22,10 @@ export const slides = () => {
             fixedHeight: 200,
           },
         },
-    }).mount();
+    })
 
   const main = new Splide( '#main-slider', {
-        fixedHeight: maxHeight,
+        fixedHeight: "60vh",
         fixedWidth: "95vw",
         type      : 'fade',
         rewind    : true,
@@ -44,7 +37,7 @@ export const slides = () => {
             fixedHeight: "50vh",
           }
         },
-  }).mount();
+  })
 
 main.sync( thumbnails );
 main.mount();

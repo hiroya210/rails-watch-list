@@ -13,7 +13,6 @@ import { barrating } from "../components/barrating"
 import { slides } from "../components/splide"
 import "select2";
 import { unclickable } from "../components/unclickable"
-
 Rails.start(); 
 Turbolinks.start();
 ActiveStorage.start();
