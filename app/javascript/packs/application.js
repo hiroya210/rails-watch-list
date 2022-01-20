@@ -8,32 +8,40 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import 'bootstrap';
+import "select2";
 import { loadDynamicBannerText } from "../components/type.js"
 import { barrating } from "../components/barrating"
 import { slides } from "../components/splide"
-import "select2";
 import { unclickable } from "../components/unclickable"
 Rails.start(); 
 Turbolinks.start();
 ActiveStorage.start();
 
+const path = typeof (parseInt(window.location.pathname.split("/")[2]));
 
 document.addEventListener('turbolinks:load', () => {
-  loadDynamicBannerText();
+  if (window.location.pathname === "/"){ loadDynamicBannerText(); }
+  if ( path === "number" ) { 
+    barrating();
+    unclickable();
+    slides(); 
+  
+  }
 });
+
 
 document.addEventListener('turbolinks:load', () => {
   $('#bookmark_movie_id').select2({
     placeholder: 'Select a movie',
     tags: true
   });
-  slides();
+  // slides();
 });
 
-document.addEventListener('turbolinks:load', () => {
-  barrating();
-});
+// document.addEventListener('turbolinks:load', () => {
+//   barrating();
+// });
 
-document.addEventListener('turbolinks:load', () => {
-  unclickable();
-});
+// document.addEventListener('turbolinks:load', () => {
+//   unclickable();
+// });

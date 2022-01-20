@@ -2,10 +2,8 @@ import Splide from '@splidejs/splide';
 
 
 
-export const slides = (maxWidth) => {
-
-
-
+export const slides = () => {
+  
   const thumbnails = new Splide( '.splide', {
         trimSpace   : false,
         focus       : 'center',
@@ -39,7 +37,7 @@ export const slides = (maxWidth) => {
         },
   })
 
-main.sync( thumbnails );
-main.mount();
-thumbnails.mount();
+    main.sync( thumbnails );
+    main.mount();
+    thumbnails.mount();
 }
