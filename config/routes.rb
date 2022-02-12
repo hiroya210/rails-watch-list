@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  devise_for :users
   root to: 'lists#home'
   resources :lists do
     resources :bookmarks, only: %i[new create]
