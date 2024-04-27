@@ -15,11 +15,11 @@
 
 // Your CSS partials
 @import "components/index";
-@import "components/footer"; 
+@import "components/footer";
 @import "pages/index";
 @import "components/form";
 
-.row{
+.row {
   margin-right: 0 !important;
 }
 
@@ -50,7 +50,7 @@ body{
     }
     padding-bottom: 10rem !important;
   }
-    
+
 }
 
   @media (max-width: 720px) {
@@ -60,7 +60,7 @@ body{
     }
 
   }
-  
+
   @media (max-width: 540px) {
     /* For a screen < 540px, this CSS will be read */
     .main-container {
@@ -77,12 +77,12 @@ body{
 
     .index-header {
       padding-left: 8px;
-      
+
       h3{
       font-size: 1.2rem;
       }
     }
-    
+
     .form-header{
       width: 320px;
       margin: 0 auto;
@@ -99,7 +99,7 @@ body{
     h1.card-title{
       font-size: 1.2rem !important;
     }
-  
+
     #card-img-mobile{
       width: auto !important;
       font-size: 0.8rem !important;
@@ -109,7 +109,7 @@ body{
       flex-direction: row !important;
       background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)) !important;
     }
-    
+
     #search-form{
       width: 90vw !important;
       text-align: center !important;
