@@ -13,7 +13,10 @@ import { loadDynamicBannerText } from "../components/type.js"
 import { barrating } from "../components/barrating"
 import { slides } from "../components/splide"
 import { unclickable } from "../components/unclickable"
-Rails.start(); 
+
+const $ = require('jquery')
+
+Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
@@ -21,11 +24,10 @@ const path = typeof (parseInt(window.location.pathname.split("/")[2]));
 
 document.addEventListener('turbolinks:load', () => {
   if (window.location.pathname === "/"){ loadDynamicBannerText(); }
-  if ( path === "number" ) { 
+  if ( path === "number" ) {
     barrating();
     unclickable();
-    slides(); 
-  
+    slides();
   }
 });
 

@@ -8,7 +8,7 @@
     <%= link_to list_path(list) do %>
       <div id="index-card" class="card bg-dark text-white m-2" style="width: 320px; height:240px">
         <% unless list.photo.key.nil?  %>
-          <%= cl_image_tag list.photo.key, class: "card-img-fluid" %>
+
         <% else %>
           <%= image_tag "https://loremflickr.com/g/320/240/movies", class: "card-img-fluid" %>
         <% end %>

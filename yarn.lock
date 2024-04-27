@@ -992,10 +992,10 @@
     webpack-cli "^3.3.12"
     webpack-sources "^1.4.3"
 
-"@splidejs/splide@^3.6.9":
-  version "3.6.9"
-  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-3.6.9.tgz#ee9041fb9f9bdc6a8fd06fa47536f76769b252a0"
-  integrity sha512-uQXmn0NUrlOhBCYJ8Qy4ZbCOu/fY7nTkEQUIjoKpuY10UJu1pddHquI/pmMCh/oIjhxDQFVd7TnDMq5m7JDdZA==
+"@splidejs/splide@^4.1.4":
+  version "4.1.4"
+  resolved "https://registry.yarnpkg.com/@splidejs/splide/-/splide-4.1.4.tgz#02d029360569e7d75d28357a9727fc48322015a3"
+  integrity sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==
 
 "@types/glob@^7.1.1":
   version "7.2.0"
@@ -3833,10 +3833,15 @@ jquery-bar-rating@^1.2.2:
   dependencies:
     jquery ">=1.7.2"
 
-jquery@>=1.7.2, jquery@^3.6.0:
+jquery@>=1.7.2:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
   integrity sha512-JVzAR/AjBvVt2BmYhxRCSYysDsPcssdmTFnzyLEts9qNwmjmu4JTAMYubEfwVOSwpQ1I1sKKFcxhZCI2buerfw==
+
+jquery@^3.7.1:
+  version "3.7.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.7.1.tgz#083ef98927c9a6a74d05a6af02806566d16274de"
+  integrity sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==
 
 js-tokens@^4.0.0:
   version "4.0.0"
