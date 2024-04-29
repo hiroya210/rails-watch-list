@@ -23,14 +23,17 @@ ActiveStorage.start();
 const path = typeof (parseInt(window.location.pathname.split("/")[2]));
 
 document.addEventListener('turbolinks:load', () => {
-  const { main, thumbnails } = slides();
   if (window.location.pathname === "/"){ loadDynamicBannerText(); }
   if ( path === "number" ) {
-    // barrating();
-    unclickable();
-    main.sync( thumbnails );
-    main.mount();
-    thumbnails.mount();
+    if (slides()) {
+      // barrating();
+      const { main, thumbnails } = slides();
+      unclickable();
+      main.sync( thumbnails );
+      main.mount();
+      thumbnails.mount();
+
+    }
   }
 });
 
@@ -40,7 +43,6 @@ document.addEventListener('turbolinks:load', () => {
     placeholder: 'Select a movie',
     tags: true
   });
-  slides();
 });
 
 // document.addEventListener('turbolinks:load', () => {
