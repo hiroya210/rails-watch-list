@@ -3,8 +3,8 @@ import Splide from '@splidejs/splide';
 
 
 export const slides = () => {
-  
-  const thumbnails = new Splide( '.splide', {
+
+  const thumbnails = new Splide( '#thumbail-images', {
         trimSpace   : false,
         focus       : 'center',
         fixedWidth  : 160,
@@ -37,7 +37,5 @@ export const slides = () => {
         },
   })
 
-    main.sync( thumbnails );
-    main.mount();
-    thumbnails.mount();
+    return { main, thumbnails }
 }

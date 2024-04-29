@@ -9,14 +9,14 @@
 <% else %>
 
 <%# Main Slide %>
-<div id="main-slider">
+<div id="main-slider" class="splide">
   <div class="splide__track" style="color:white;">
       <div class="splide__list">
         <% @list.bookmarks.each do |bookmark| %>
           <div class="splide__slide">
-              <%= render "components/card", 
-                title: bookmark.movie.title, 
-                rating: bookmark.movie.rating, 
+              <%= render "components/card",
+                title: bookmark.movie.title,
+                rating: bookmark.movie.rating,
                 overview: bookmark.movie.overview.split(" ").first(75).join(" "),
                 photo: bookmark.movie.backdrop_url,
                 comment: bookmark.comment,
@@ -47,7 +47,7 @@
 
 <% unless @list.movies.empty? %>
 <%# Thumbnails %>
-<div class="splide">
+<div id="thumbail-images" class="splide">
     <div class="splide__track">
       <div class="splide__list">
         <% @list.bookmarks.each do |bookmark| %>
