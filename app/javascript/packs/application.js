@@ -23,9 +23,9 @@ ActiveStorage.start();
 const path = typeof (parseInt(window.location.pathname.split("/")[2]));
 
 document.addEventListener('turbolinks:load', () => {
-  const { main, thumbnails } = slides();
   if (window.location.pathname === "/"){ loadDynamicBannerText(); }
   if ( path === "number" ) {
+    const { main, thumbnails } = slides();
     // barrating();
     unclickable();
     main.sync( thumbnails );
@@ -40,7 +40,6 @@ document.addEventListener('turbolinks:load', () => {
     placeholder: 'Select a movie',
     tags: true
   });
-  slides();
 });
 
 // document.addEventListener('turbolinks:load', () => {
