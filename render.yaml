@@ -9,7 +9,6 @@ databases:
   - source: 0.0.0.0/0
     description: everywhere
   postgresMajorVersion: "15"
-version: "1"
 
 # Exported from Render on 2024-04-30T17:16:29Z
 services:
