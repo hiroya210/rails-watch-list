@@ -1,8 +1,15 @@
+# Exported from Render on 2024-04-30T16:09:03Z
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
-    plan: free
+- name: watch-list
+  databaseName: watch_list_0b20
+  user: hiroya
+  plan: free
+  region: singapore
+  ipAllowList:
+  - source: 0.0.0.0/0
+    description: everywhere
+  postgresMajorVersion: "15"
+version: "1"
 
 services:
   - type: web
